@@ -1,0 +1,67 @@
+{
+  "name": "chain-icons",
+  "version": "1.0.5",
+  "description": "",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/index.mjs",
+  "author": "@jnsdls",
+  "license": "Apache-2.0",
+  "scripts": {
+    "download": "node scripts/download-icons.mjs",
+    "generate:png": "node scripts/convert-svg-to-png.mjs",
+    "clean": "rimraf dist/ && rimraf src/",
+    "map": "node scripts/map-chain-info.mjs",
+    "build": "yarn clean && yarn download && yarn generate:png && yarn map",
+    "fix": "preconstruct fix"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist/",
+    "svg/",
+    "png/"
+  ],
+  "keywords": [
+    "chain",
+    "icon",
+    "react",
+    "react-icons",
+    "react-chain-icons",
+    "web3"
+  ],
+  "peerDependencies": {
+    "react": "*"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-react": "^7.16.0",
+    "@babel/preset-typescript": "^7.16.0",
+    "@svgr/core": "^6.1.1",
+    "@svgr/plugin-jsx": "^6.1.0",
+    "@svgr/plugin-prettier": "^6.0.0",
+    "@svgr/plugin-svgo": "^6.1.0",
+    "@types/react": "^18",
+    "got": "^12.0.0",
+    "react": "*",
+    "sharp": "^0.31.3",
+    "svgo-autocrop": "^1.1.1",
+    "tsup": "^6.1.2",
+    "typescript": "^4.5.3"
+  },
+  "resolutions": {
+    "glob-parent": "^5.1.2"
+  },
+  "tsup": {
+    "entry": [
+      "src/"
+    ],
+    "splitting": true,
+    "sourcemap": true,
+    "clean": true
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
